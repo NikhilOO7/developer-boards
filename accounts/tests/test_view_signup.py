@@ -34,8 +34,8 @@ class SignUpTests( TestCase ):
 		self.assertIsInstance(form, SignUpForm)
 
 	def test_form_inputs(self):
-	 	'''
-	 	The view must contain five inputs: csrf, username, email,
+		'''
+		The view must contain five inputs: csrf, username, email,
 		password1, password2
 		'''
 		self.assertContains(self.response, '<input', 5)
@@ -49,9 +49,9 @@ class SuccessfulSignUpTests( TestCase ):
 		url = reverse('signup')
 		data = {
 			'username' : 'Nikhil',
-			'email'	: 'hello@y.com'
-			'password1' : 'abcdefgh',
-			'password2' : 'abcdefgh'
+			'email'	: 'hello@y.com',
+			'password1' : 'abcdefgh1234',
+			'password2' : 'abcdefgh1234'
 		}
 
 		self.response = self.client.post(url, data)
